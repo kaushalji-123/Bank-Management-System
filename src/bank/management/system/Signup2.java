@@ -184,7 +184,32 @@ public class Signup2 extends JFrame implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        String religion = (String) comboBox.getSelectedItem();
+        String catagory = (String) comboBox.getSelectedItem();
+        String income = (String) comboBox.getSelectedItem();
+        String education = (String) comboBox.getSelectedItem();
+        String occupation = (String) comboBox.getSelectedItem();
+
+        String pan = textPan.getText();
+        String aadhar = textAadhar.getText();
+
+        String seniorcitizen = null;
+        if(r1.isSelected()){
+            seniorcitizen = "Yes";
+        }else if (r2.isSelected()){
+            seniorcitizen = "No";
+        }
+        String existingaccount = null;
+        if(r1.isSelected()){
+            existingaccount = "Yes";
+        }else if (r2.isSelected()){
+            existingaccount = "No";
+        }
+
         try{
+            if(textPan.getText().equals("")){
+                JOptionPane.showMessageDialog(null,"Fill the fields ");
+            }
 
         }catch (Exception E){
             E.printStackTrace();

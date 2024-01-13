@@ -240,8 +240,6 @@ public class Signup extends JFrame implements ActionListener {
                 conn1.statement.executeUpdate(q);
                 new Signup2(first);
                 setVisible(false);
-                setVisible(true);
-
             }
         }catch (Exception E){
             E.printStackTrace();

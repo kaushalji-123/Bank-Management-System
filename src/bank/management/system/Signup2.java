@@ -184,11 +184,11 @@ public class Signup2 extends JFrame implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String religion = (String) comboBox.getSelectedItem();
-        String catagory = (String) comboBox.getSelectedItem();
-        String income = (String) comboBox.getSelectedItem();
-        String education = (String) comboBox.getSelectedItem();
-        String occupation = (String) comboBox.getSelectedItem();
+        String rel = (String) comboBox.getSelectedItem();
+        String catagory = (String) comboBox2.getSelectedItem();
+        String income = (String) comboBox3.getSelectedItem();
+        String education = (String) comboBox4.getSelectedItem();
+        String occupation = (String) comboBox5.getSelectedItem();
 
         String pan = textPan.getText();
         String aadhar = textAadhar.getText();
@@ -207,8 +207,14 @@ public class Signup2 extends JFrame implements ActionListener{
         }
 
         try{
-            if(textPan.getText().equals("")){
+            if(textPan.getText().equals("") || textAadhar.getText().equals("") ){
                 JOptionPane.showMessageDialog(null,"Fill the fields ");
+            }else {
+                Conn c1 = new Conn();
+                String q = "insert into Signup2 values('"+formno+"','"+rel+"','"+catagory+"','"+income+"','"+education+"','"+occupation+"','"+pan+"','"+aadhar+"','"+seniorcitizen+"','"+existingaccount+"')";
+                c1.statement.executeUpdate(q);
+                new Signup3(formno);
+                setVisible(false);
             }
 
         }catch (Exception E){

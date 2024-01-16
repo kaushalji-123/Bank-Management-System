@@ -1,45 +1,54 @@
-# ATM Bank-Management-System
+# Java ATM Bank-Management-System
 
-This is a simple Java-based banking system that uses MySQL as the database for storing customer information and transactions.
+This repository houses a robust Bank Management System developed in Java Swing, featuring an advanced graphical user interface for seamless user interactions.
+
+## Key Technical Features
+
+- **MVC Architecture**: Implemented using the Model-View-Controller (MVC) design pattern for clear separation of concerns, promoting code organization and maintainability.
+
+- **Database Integration**: Utilizes MySQL for efficient and secure data storage. The `Conn.java` class handles the database connection, ensuring reliable data retrieval and storage.
+
+- **Responsive GUI**: Designed with Java's Swing framework, ensuring a responsive and intuitive Graphical User Interface (GUI) for a smooth user experience.
+
+- **Transaction Logging**: Maintains a comprehensive transaction history by logging details into the database, providing a reliable audit trail for financial activities.
+- 
+- **Exception Handling**: Implements robust exception handling mechanisms to gracefully manage runtime errors and ensure system stability.
+
 
 ## Features
 
-- User registration and authentication
-- Account management (create, view, update, delete)
-- Deposit and withdrawal transactions
-- View transaction history
-## Project Structure 
+- **User Signup**: Capture user details in a step-by-step process.
+- **Additional Details**: Gather supplementary information like religion, category, income, etc.
+- **Account Details**: Set account type, card number, PIN, and required services.
+- **Deposit**: Easily deposit money into the account.
+- **Transaction History**: View a detailed transaction history.
 
-...
 ## Screenshots
-### Login Page 
+### Login Page Interface 
 ![Login Page ](/src/image/login.png)
-### Signup Page 1
+### Signup Page 1 Interface 
 ![Signup Page 1](/src/image/signup1.png)
 
-### Signup Page 2
+### Signup Page 2 Interface 
 ![Signup Page 2](/src/image/signup2.png)
 
-### Account Details Page
+### Account Details Page Interface 
 ![Account Details](/src/image/signup3.png)
 
-### Deposit Interface
+### Main Page Interface 
+![Account Details](/src/image/mainScreen.png)
+
+### Deposit Money Interface
 ![Deposit Interface](/src/image/deposit.png)
-## Technologies Used
 
-- Java
-- MySQL
-- JDBC (Java Database Connectivity)
+### Deposit Money Interface
+![Deposit Interface](/src/image/deposit.pn)
 
-## Prerequisites
 
-- Java Development Kit (JDK)
-- MySQL Server
-- IDE (Integrated Development Environment) like IntelliJ IDEA or Eclipse
 
 ## Setup
 
 1. Clone the repository:
-
    ```bash
-   git clone https://github.com/your-username/java-banking-system.git
+   git clone https://github.com/kaushalji-123/Bank-Management-System.git
+

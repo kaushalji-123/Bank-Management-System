@@ -8,7 +8,23 @@ This is a simple Java-based banking system that uses MySQL as the database for s
 - Account management (create, view, update, delete)
 - Deposit and withdrawal transactions
 - View transaction history
+## Project Structure 
 
+...
+## Screenshots
+### Login Page 
+![Login Page ](/src/image/login.png)
+### Signup Page 1
+![Signup Page 1](/src/image/signup1.png)
+
+### Signup Page 2
+![Signup Page 2](/src/image/signup2.png)
+
+### Account Details Page
+![Account Details](/src/image/signup3.png)
+
+### Deposit Interface
+![Deposit Interface](/src/image/deposit.png)
 ## Technologies Used
 
 - Java

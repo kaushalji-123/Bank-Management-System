@@ -11,7 +11,7 @@ This repository houses a robust Bank Management System developed in Java Swing, 
 - **Responsive GUI**: Designed with Java's Swing framework, ensuring a responsive and intuitive Graphical User Interface (GUI) for a smooth user experience.
 
 - **Transaction Logging**: Maintains a comprehensive transaction history by logging details into the database, providing a reliable audit trail for financial activities.
-- 
+  
 - **Exception Handling**: Implements robust exception handling mechanisms to gracefully manage runtime errors and ensure system stability.
 
 

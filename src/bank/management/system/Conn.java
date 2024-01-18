@@ -12,6 +12,7 @@ public class Conn {
         try{
             connection = DriverManager.getConnection( "jdbc:mysql://localhost:3306/HMBank ","root","Forgate@123");
             statement = connection.createStatement();
+            System.out.println("connected");
         }
         catch(Exception e){
             e.printStackTrace();

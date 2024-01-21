@@ -1,16 +1,20 @@
 package bank.management.system;
 
 import javax.swing.*;
+import javax.xml.crypto.Data;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Date;
+import java.sql.ResultSet;
+import java.sql.Time;
 
 
 public class Withdrawl extends JFrame implements ActionListener {
     String pin;
-    JButton depositB,backB;
+    JButton withdrawB,backB;
     JTextField textField;
-    Withdrawl(){
+    Withdrawl(String pin){
 
         this.pin = pin;
 
@@ -47,20 +51,20 @@ public class Withdrawl extends JFrame implements ActionListener {
         textField.setFont(new Font("Raleway",Font.BOLD,22));
         l3.add(textField);
 
-        depositB = new JButton("DEPOSIT");
-        depositB.setBounds(700,367,150,35);
-        depositB.setForeground(Color.white);
-        depositB.setBackground(new Color(48, 155, 0));
-        depositB.setFont(new Font("Raleway",Font.BOLD,14));
-//        depositB.addActionListener(this);
-        l3.add(depositB);
+        withdrawB = new JButton("WITHDRAW");
+        withdrawB.setBounds(700,367,150,35);
+        withdrawB.setForeground(Color.white);
+        withdrawB.setBackground(new Color(48, 155, 0));
+        withdrawB.setFont(new Font("Raleway",Font.BOLD,14));
+        withdrawB.addActionListener(this);
+        l3.add(withdrawB);
 
         backB = new JButton("BACK");
         backB.setBounds(700,408,150,35);
         backB.setForeground(Color.white);
         backB.setBackground(Color.BLACK);
         backB.setFont(new Font("Raleway",Font.BOLD,14));
-//        backB.addActionListener(this);
+        backB.addActionListener(this);
         l3.add(backB);
 
         setLayout(null);
@@ -72,10 +76,42 @@ public class Withdrawl extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if(e.getSource()==withdrawB)
+        try{
+            String amount = textField.getText();
+            Date date = new Date(0);
+            if(textField.getText().equals("")){
+                JOptionPane.showMessageDialog(null,"Please Enter the amount you want withdrawl");
+            }else{
+                Conn c = new Conn();
+                ResultSet resultSet = c.statement.executeQuery("select * from bank where pin = '"+pin+"'");
+                int balance = 0;
+                while(resultSet.next()){
+                    if(resultSet.getString("type").equals("Deposit")){
+                        balance += Integer.parseInt(resultSet.getString("amount"));
+                        }else {
+                        balance -= Integer.parseInt(resultSet.getString("amount"));
+                    }
+                }
+                if(balance < Integer.parseInt(amount)){
+                    JOptionPane.showMessageDialog(null,"Insufficient Balance");
+                    return;
+                }
+                c.statement.executeUpdate("insert into bank values('"+pin+"','"+date+"','Withdrawl','"+amount+"')");
+                JOptionPane.showMessageDialog(null,"Rs."+amount+"Debited Successfully");
+                setVisible(false);
+                new main_Class(pin);
+            }
+        }catch(Exception E){
+            E.printStackTrace();
+        }
+        else if (e.getSource()==backB) {
+            setVisible(false);
+            new main_Class(pin);
+        }
     }
 
     public static void main(String[] args) {
-        new Withdrawl();
+        new Withdrawl("");
     }
 }

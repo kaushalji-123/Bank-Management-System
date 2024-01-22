@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class main_Class extends JFrame implements ActionListener {
-    JButton b1,b2,b3,b4,b5,b6,b7;
+    JButton b1,b3,b4,b5,b6,b7;
     String pin;
     main_Class(String pin){
         this.pin= pin;
@@ -32,16 +32,9 @@ public class main_Class extends JFrame implements ActionListener {
         b1.addActionListener(this);
         l3.add(b1);
 
-        b2 = new JButton("FAST CASH");
-        b2.setBounds(410,320,150,35);
-        b2.setForeground(Color.white);
-        b2.setBackground(new Color(0,66,37));
-        b2.setFont(new Font("Raleway",Font.BOLD,14));
-        b2.addActionListener(this);
-        l3.add(b2);
 
         b3 = new JButton("PIN CHANGE");
-        b3.setBounds(410,365,150,35);
+        b3.setBounds(410,320,150,35);
         b3.setForeground(Color.white);
         b3.setBackground(new Color(0,66,37));
         b3.setFont(new Font("Raleway",Font.BOLD,14));
@@ -49,7 +42,7 @@ public class main_Class extends JFrame implements ActionListener {
         l3.add(b3);
 
         b4 = new JButton("EXIT");
-        b4.setBounds(410,412,150,35);
+        b4.setBounds(410,365,150,35);
         b4.setForeground(Color.white);
         b4.setBackground(new Color(180, 0, 0));
         b4.setFont(new Font("Raleway",Font.BOLD,14));
@@ -101,6 +94,11 @@ public class main_Class extends JFrame implements ActionListener {
         } else if (e.getSource()==b7) {
             new BalanceEnquiry(pin);
             setVisible(false);
+        }else if(e.getSource()==b3){
+            new Pin(pin);
+            setVisible(false);
+        } else if (e.getSource()==b6) {
+            new mini(pin);
         }
     }
 

@@ -41,8 +41,11 @@ This repository houses a robust Bank Management System developed in Java Swing, 
 ### Deposit Money Interface
 ![Deposit Interface](/src/image/deposit.png)
 
-### Deposit Money Interface
-![Deposit Interface](/src/image/deposit.pn)
+### Withdraw Money Interface
+![Deposit Interface](/src/image/withdraw.png)
+
+### Balance Inquiry Money Interface
+![Deposit Interface](/src/image/BalanceE.png)
 
 
 
